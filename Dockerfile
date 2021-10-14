@@ -6,10 +6,10 @@ RUN pip install flask
 
 COPY app.py /opt/
 
-ENV FLASK_APP /opt/
+ENV FLASK_APP /opt/app.py
 ENV FLASK_DEBUG 1
 
-ENTRYPOINT [ "flask" ]
-CMD ["app.py", "run", "--host", "0.0.0.0", "--port", "5000"]
+ENTRYPOINT [ "flask==1.1.1" ]
+CMD ["run", "--host", "0.0.0.0", "--port", "5000"]
 
 
